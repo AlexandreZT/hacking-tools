@@ -1,0 +1,28 @@
+# check which operating sys is used
+from sys import platform
+
+if platform == "linux" or platform == "linux2":
+  print("linux")
+elif platform == "darwin":
+  print("OS X")
+elif platform == "win32":
+  print("Windows...")
+
+
+# used python version when lauching the script
+if (sys.version_info > (3, 0)):
+  print("vous utilisez python 3")
+else:
+  print("vous utilisez python 2")
+
+
+----------------------------
+python 2 
+	
+python 3
+	
+linux
+	clear
+
+windows
+	cls
