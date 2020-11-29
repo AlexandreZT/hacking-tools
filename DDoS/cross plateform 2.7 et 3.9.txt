@@ -16,19 +16,5 @@ else:
   print("vous utilisez python 2")
 
 
-----------------------------
-python 2 
-	raw_input
-	port
-
-python 3
-	input
-	int(port)
-
-linux
-	clear
-	piglet
-
-windows
-	cls
-	pyfiglet
+# Une unique versin cross plateforme sortira un de ces quatres
+# En attendant vous avez les versions que vous voulez

