@@ -18,11 +18,17 @@ else:
 
 ----------------------------
 python 2 
-	
+	raw_input
+	port
+
 python 3
-	
+	input
+	int(port)
+
 linux
 	clear
+	piglet
 
 windows
 	cls
+	pyfiglet
