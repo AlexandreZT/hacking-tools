@@ -4,11 +4,10 @@ import time
 import socket
 import random
 import math
-from datetime import datetime
 
 try: # not native
   from pyfiglet import Figlet
-else:
+except:
     os.system('pip3 install pyfiglet==0.7')
     from pyfiglet import Figlet
 
@@ -18,7 +17,6 @@ bytes = random._urandom(1490)
 os.system("cls")
 f = Figlet(font='slant')
 print (f.renderText('DDoS Attack'))
-
 print ("Author : AlexandreZT")
 print ("GitHub : https://github.com/AlexandreZT")
 

@@ -4,11 +4,10 @@ import time
 import socket
 import random
 import math
-from datetime import datetime
 
 try: # not native
   from pyfiglet import Figlet
-else:
+except:
     os.system('pip3 install pyfiglet==0.7')
     from pyfiglet import Figlet
 
