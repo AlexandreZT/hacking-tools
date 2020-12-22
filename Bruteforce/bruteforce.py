@@ -31,8 +31,6 @@ def generate_password():
 
     return passwordlenght, generated_pass
 
-
-
 def brute_force(complexity, password):
     cracking = True
     loop = 0
@@ -48,7 +46,6 @@ def brute_force(complexity, password):
     tested_combination = 0
     while cracking:
         while h < len(complexity):
-        # for h in range (0, len(complexity), 1):
             loop+=1
             while g < len(complexity):
                 loop+=1
@@ -63,16 +60,13 @@ def brute_force(complexity, password):
                                 while b < len(complexity):
                                     loop+=1
                                     while a < len(complexity):
-                                    # for a in range (0, len(complexity), 1):
-                                        # loop_number
                                         if loop < bruteforce_lenght:
                                             if password == complexity[a]:
                                                 print("nombre de combinaison testé :", tested_combination)
                                                 return complexity[a]
                                             print(complexity[a])
 
-                                        # old + len(complexity)
-                                        elif loop >= bruteforce_lenght and loop < len(complexity) + bruteforce_lenght:
+                                        elif loop > bruteforce_lenght and loop <= bruteforce_lenght + len(complexity):
                                             if b_loop == True:
                                                 b = 0
                                                 b_loop=False
@@ -81,8 +75,7 @@ def brute_force(complexity, password):
                                                 return complexity[b]+complexity[a]
                                             print(complexity[b]+complexity[a])
 
-                                        # old + len(complexity)*len(complexity) 
-                                        elif loop >= len(complexity) + bruteforce_lenght  and loop < len(complexity)**2 + len(complexity) + bruteforce_lenght:   
+                                        elif loop > bruteforce_lenght + len(complexity) and loop <= bruteforce_lenght + 2*len(complexity) + len(complexity)**2:   
                                             if c_loop == True:
                                                 c = b = 0
                                                 c_loop=False                         
@@ -91,8 +84,7 @@ def brute_force(complexity, password):
                                                 return complexity[c]+complexity[b]+complexity[a]
                                             print(complexity[c]+complexity[b]+complexity[a])
 
-                                        # old + len(complexity)*len(complexity)*len(complexity) 
-                                        elif loop >= len(complexity)**2 + len(complexity) + bruteforce_lenght and loop < len(complexity)**3 + len(complexity)**2 + len(complexity) + bruteforce_lenght: # nb_char * nb_char + nb_char + nb de loop (94*94+94+4)                      
+                                        elif loop > bruteforce_lenght + 2*len(complexity) + len(complexity)**2 and loop <= bruteforce_lenght + 3*len(complexity) + 2*len(complexity)**2 + len(complexity)**3: # nb_char * nb_char + nb_char + nb de loop (94*94+94+4)                      
                                             if d_loop == True:
                                                 d = c = b = 0
                                                 d_loop=False 
@@ -101,8 +93,7 @@ def brute_force(complexity, password):
                                                 return complexity[d]+complexity[c]+complexity[b]+complexity[a]
                                             print(complexity[d]+complexity[c]+complexity[b]+complexity[a])
                                         
-                                        # old + len(complexity)*len(complexity)*len(complexity)*len(complexity) 
-                                        elif loop >= len(complexity)**3 + len(complexity)**2 + len(complexity) + bruteforce_lenght and loop < len(complexity)**4 + len(complexity)**3 + len(complexity)**2 + len(complexity) + bruteforce_lenght:
+                                        elif loop > bruteforce_lenght + 3*len(complexity) + 2*len(complexity)**2 + len(complexity)**3 and loop <= bruteforce_lenght + 4*len(complexity) + 3*len(complexity)**2 + 2*len(complexity)**3 + len(complexity)**4:
                                             if e_loop == True:
                                                 e = d = c = b = 0
                                                 e_loop=False 
@@ -110,9 +101,8 @@ def brute_force(complexity, password):
                                                 print("nombre de combinaison testé :", tested_combination)
                                                 return complexity[e]+complexity[d]+complexity[c]+complexity[b]+complexity[a]
                                             print(complexity[e]+complexity[d]+complexity[c]+complexity[b]+complexity[a])
-                                        
-                                        # old + len(complexity)*len(complexity)*len(complexity)*len(complexity)*len(complexity)                                 
-                                        elif loop >= len(complexity)**4 + len(complexity)**3 + len(complexity)**2 + len(complexity) + bruteforce_lenght and loop < len(complexity)**5 + len(complexity)**4 + len(complexity)**3 + len(complexity)**2 + len(complexity) + bruteforce_lenght:
+                                                                     
+                                        elif loop > bruteforce_lenght + 4*len(complexity) + 3*len(complexity)**2 + 2*len(complexity)**3 + len(complexity)**4 and loop <= bruteforce_lenght + 5*len(complexity) + 4*len(complexity)**2 + 3*len(complexity)**3 + 2*len(complexity)**4 + len(complexity)**5:
                                             if f_loop == True:
                                                 f = e = d = c = b = 0
                                                 f_loop=False 
@@ -121,7 +111,7 @@ def brute_force(complexity, password):
                                                 return complexity[f]+complexity[e]+complexity[d]+complexity[c]+complexity[b]+complexity[a]
                                             print(complexity[f]+complexity[e]+complexity[d]+complexity[c]+complexity[b]+complexity[a])
 
-                                        elif loop >= len(complexity)**5 + len(complexity)**4 + len(complexity)**3 + len(complexity)**2 + len(complexity) + bruteforce_lenght and loop < len(complexity)**6 + len(complexity)**5 + len(complexity)**4 + len(complexity)**3 + len(complexity)**2 + len(complexity) + bruteforce_lenght:
+                                        elif loop > bruteforce_lenght + 5*len(complexity) + 4*len(complexity)**2 + 3*len(complexity)**3 + 2*len(complexity)**4 + len(complexity)**5 and loop <= bruteforce_lenght + 6*len(complexity) + 5*len(complexity)**2 + 4*len(complexity)**3 + 3*len(complexity)**4 + 2*len(complexity)**5 + len(complexity)**6:
                                             if g_loop == True:
                                                 g = f = e = d = c = b = 0
                                                 g_loop=False
@@ -130,7 +120,7 @@ def brute_force(complexity, password):
                                                 return complexity[g]+complexity[f]+complexity[e]+complexity[d]+complexity[c]+complexity[b]+complexity[a]
                                             print(complexity[g]+complexity[f]+complexity[e]+complexity[d]+complexity[c]+complexity[b]+complexity[a])
 
-                                        elif loop >= len(complexity)**6 + len(complexity)**5 + len(complexity)**4 + len(complexity)**3 + len(complexity)**2 + len(complexity) + bruteforce_lenght and loop < len(complexity)**7 + len(complexity)**6 + len(complexity)**5 + len(complexity)**4 + len(complexity)**3 + len(complexity)**2 + len(complexity) + bruteforce_lenght:
+                                        elif loop > bruteforce_lenght + 6*len(complexity) + 5*len(complexity)**2 + 4*len(complexity)**3 + 3*len(complexity)**4 + 2*len(complexity)**5 + len(complexity)**6 and loop <= bruteforce_lenght + 7*len(complexity) + 6*len(complexity)**2 + 5*len(complexity)**3 + 4*len(complexity)**4 + 3*len(complexity)**5 + 2*len(complexity)**6 + len(complexity)**7:
                                             if h_loop == True:
                                                 h = g = f = e = d = c = b = 0
                                                 h_loop=False
