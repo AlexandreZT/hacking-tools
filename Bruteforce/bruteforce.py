@@ -147,12 +147,21 @@ def brute_force(complexity, password):
         
                                                                                 
 if __name__ == "__main__":
+    print("""
+Bonjour choisissez les caractères que vous voulez dans votre mot de passe,
+Si oui, entrez 'yes'""")
     complexity = set_complexity()
     input("voici les caractères possible : {}".format(complexity))
 
-    password_lenght, password = generate_password()
+    choice = input("1) Générer un mot de passe\n2) Entrer un mot de passe\n: ")
+    if choice == "1":
+        password_lenght, password = generate_password()
+        input("voici le mot de passe généré : {}".format(password))
+    elif choice == "2":
+        password = input("Entre ton mot de passe : ")
+        password_lenght = len(password)
     input("Voici le nombre de combinaisons possibles : {}".format(len(complexity)**password_lenght))
-    input("voici le mot de passe généré : {}".format(password))
+    
     
     chonomètre = time.time()
     result = brute_force(complexity, password)
